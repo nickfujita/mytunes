@@ -2,37 +2,38 @@
 var Songs = Backbone.Collection.extend({
 
   initialize: function(){
-    this.query = 'rock';
+    this.query = 'eric clapton';
   },
 
   model: SongModel,
 
-  // url: 'https://api.soundcloud.com/tracks?client_id=9e3abdceafbd5ef113b3430508a34c92&'+this.query,
-
   url: 'https://api.soundcloud.com/tracks',
 
   getSongs: function() {
-    console.log(this.query+' '+this.url);
-    this.fetch({data: {'client_id':client_id,'q':this.query}});
+
+    this.fetch({
+      data: {
+        'client_id':client_id,
+        'q':this.query,
+        'limit': '100'
+      }
+    });
 
   },
-
-  // getSongs: function() {
-  //   this.fetch({
-  //     data:{
-  //       client_id: '9e3abdceafbd5ef113b3430508a34c92',
-  //       genre: 'rock'
-  //     }
-  //   });
-
-  // },
 
   parse: function(res) {
     console.log(res);
     return res.map(function(obj){
-                      return {url: obj.stream_url+'?client_id='+client_id,title: obj.title, artist: obj.user.username};
+                      return {
+                        url: obj.stream_url+'?client_id='+client_id,
+                        title: obj.title,
+                        artist: obj.user.username,
+                        artwork_url: obj.artwork_url,
+                        likes_count: obj.likes_count,
+                        playback_count: obj.playback_count,
+                        favoritings_count: obj.favoritings_count
+                      };
             });
-
   }
 
 });

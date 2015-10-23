@@ -40,11 +40,11 @@ var PlayerView = Backbone.View.extend({
     }
   },
 
-  resetAudio: function() {
-    this.audio = new Audio();
-    this.audio.controls = true;
-    this.audio.autoplay = true;
-  },
+  // resetAudio: function() {
+  //   this.audio = new Audio();
+  //   this.audio.controls = true;
+  //   this.audio.autoplay = true;
+  // },
 
   setSong: function(song) {
     // Set the player song
@@ -55,7 +55,7 @@ var PlayerView = Backbone.View.extend({
     //   this.audio.src = this.model.get('url');
     // }
     // $('body').append(this.audio);
-    this.visualize();
+    // this.visualize();
     this.render();
   },
 

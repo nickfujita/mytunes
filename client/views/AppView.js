@@ -33,11 +33,11 @@ var AppView = Backbone.View.extend({
 
   render: function() {
 
-    var library = $('<div class="library col m8 s12"></div>').append($('<h4>Library</h4>'),this.libraryView.$el);
+    var library = $('<div class="library col m10 s12"></div>').append($('<h4>Library</h4>'),this.libraryView.$el);
     
     var player = $('<footer class="page-footer white container"></footer>').append(this.playerView.$el);
 
-    var queue = $('<div class="queue col m4 s12"></div>').append($('<h4>Playlist</h4>'),this.songQueueView.$el);
+    var queue = $('<div class="queue col m2 s12"></div>').append($('<h4>Playlist</h4>'),this.songQueueView.$el);
 
     //var playerQueue = $('<div class="playerQueue col m4 s12">').append(player,$('<h5>Playlist</h5>'),queue);
 

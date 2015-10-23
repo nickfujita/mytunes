@@ -1,7 +1,7 @@
 // LibraryView.js - Defines a backbone view class for the music library.
 var LibraryView = Backbone.View.extend({
 
-  tagName: "table",
+  tagName: "div",
 
   className: "bordered highlight library",
 
@@ -16,7 +16,8 @@ var LibraryView = Backbone.View.extend({
 
     this.$el.children().detach();
 
-    this.$el.html('<thead><tr><th data-field="id">Artist</th><th data-field="name">Song</th></tr></thead>').append(
+    // this.$el.html('<thead><tr><th data-field="id">Artist</th><th data-field="name">Song</th></tr></thead>').append(
+    this.$el.append(
       this.collection.map(function(song) {
         return new LibraryEntryView({model: song}).render();
       })
