@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link href="styles/styles.css" rel="stylesheet"></link>
+
+</head>
+<body>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+
+  <script src="env/config.js"></script>
+
+
+  <script src="data/data.js"></script>
+
+  <script src="models/SongModel.js"></script>
+  <script src="collections/Songs.js"></script>
+  <script src="collections/SongQueue.js"></script>
+  <script src="models/AppModel.js"></script>
+
+  <script src="views/NavView.js"></script>
+  <script src="views/PlayerView.js"></script>
+  <script src="views/LibraryView.js"></script>
+  <script src="views/LibraryEntryView.js"></script>
+  <script src="views/SongQueueView.js"></script>
+  <script src="views/SongQueueEntryView.js"></script>
+  <script src="views/AppView.js"></script>
+
+  <script>
+    $(function() {
+        // set up model objects
+        var library = new Songs(songData);
+
+        var navView = new NavView({collection: library});
+        $('body').append(navView.render());
+        // var library = new Songs();
+
+        // library.getMessages();
+
+        var app = new AppModel({library: library});
+
+        // build a view for the top level of the whole app
+        var appView = new AppView({model: app});
+
+
+        // put the view onto the screen
+        $('body').append(appView.render());
+
+      });
+  </script>
+</body>
+</html>

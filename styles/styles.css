@@ -1,0 +1,48 @@
+audio {
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/*.library {
+  max-height: 770px;
+  overflow-y: scroll;
+}
+
+.queue {
+  overflow-y: scroll; 
+}*/
+
+.songCard {
+  font-size: .85em;
+/*  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;*/
+}
+
+.other {
+  display: block;
+  white-space: nowrap;
+}
+
+.queuedSong {
+  /*overflow:hidden;*/
+  /*text-overflow:ellipsis;*/
+  /*white-space: nowrap;*/
+  font-size: .85em;
+  margin-bottom: 0;
+}
+
+.closeIconBox {
+  padding: 0;
+}
